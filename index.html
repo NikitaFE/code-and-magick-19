@@ -188,22 +188,24 @@
   var wizardSpeed = 3;
   var wizardWidth = 70;
 
-  var getFireballSpeed = function (left) {
+  //на второй лекции разрешили объявлять функции так. Если ты против, я переделаю обратно :)
+  function getFireballSpeed(left) {
     return left ? 5 : 2;
-  };
+  }
 
-  var getWizardHeight = function (wizardWidth) {
+  function getWizardHeight(wizardWidth) {
     return 1.337 * wizardWidth;
-  };
+  }
 
-  var getWizardX = function (width) {
+  function getWizardX(width) {
     return width / 2 - wizardWidth / 2;
-  };
+  }
 
-  var getWizardY = function (height) {
+  function getWizardY(height) {
     return height / 3 - getWizardHeight(wizardWidth);
-  };
+  }
 </script>
+<script src="js/stat.js"></script>
 <script src="js/game.js"></script>
 
 </body>
