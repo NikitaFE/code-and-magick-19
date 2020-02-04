@@ -6,6 +6,8 @@ var COAT_COLORS = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161
 var EYES_COLORS = ['black', 'red', 'blue', 'yellow', 'green'];
 var FIREBALL_COLORS = ['#ee4830', '#30a8ee', '#5ce6c0', '#e848d5', '#e6e848'];
 var WIZARDS_NUMBER = 4;
+var ENTER_CODE = 13;
+var ESC_CODE = 27;
 
 var template = document.querySelector('#similar-wizard-template')
                         .content
@@ -75,10 +77,12 @@ setupPopup.querySelector('.setup-similar').classList.remove('hidden');
 /* module4-task1 */
 function openPopup() {
   setupPopup.classList.remove('hidden');
+  addEscEvent();
 }
 
 function closePopup() {
   setupPopup.classList.add('hidden');
+  removeEscEvent();
 }
 
 function onOpenClick() {
@@ -94,7 +98,7 @@ function onKeyPress(evt) {
   var target = evt.target;
   var focusedElement = document.activeElement;
 
-  if (evtKeyCode === 13) {
+  if (evtKeyCode === ENTER_CODE) {
     switch (target) {
       case openIcon:
         openPopup();
@@ -105,7 +109,7 @@ function onKeyPress(evt) {
     }
   }
 
-  if (evtKeyCode === 27 && focusedElement !== nameField) {
+  if (evtKeyCode === ESC_CODE && focusedElement !== nameField) {
     closePopup();
   }
 }
@@ -134,12 +138,19 @@ function onFireballChange() {
   fireballInput.value = randomFireballCoatColor;
 }
 
+function addEscEvent() {
+  window.addEventListener('keydown', onKeyPress);
+}
+
+function removeEscEvent() {
+  window.removeEventListener('keydown', onKeyPress);
+}
+
 setupOpen.addEventListener('click', onOpenClick);
 openIcon.addEventListener('keydown', onKeyPress);
 setupClose.addEventListener('click', onCloseClick);
 setupClose.addEventListener('keydown', onKeyPress);
 setupWizard.addEventListener('click', onColorChange);
 wizardFireball.addEventListener('click', onFireballChange);
-window.addEventListener('keydown', onKeyPress);
 
 /* module4-task1 */
