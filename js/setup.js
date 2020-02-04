@@ -23,7 +23,7 @@ var wizardCoat = setupWizard.querySelector('.wizard-coat');
 var wizardEyes = setupWizard.querySelector('.wizard-eyes');
 var wizardFireball = setupPopup.querySelector('.setup-fireball-wrap');
 var coatInput = setupForm.elements['coat-color'];
-var eyesInput =  setupForm.elements['eyes-color'];
+var eyesInput = setupForm.elements['eyes-color'];
 var fireballInput = setupForm.elements['fireball-color'];
 var wizards;
 
@@ -94,7 +94,7 @@ function onKeyPress(evt) {
   var target = evt.target;
   var focusedElement = document.activeElement;
 
-  if(evtKeyCode === 13) {
+  if (evtKeyCode === 13) {
     switch (target) {
       case openIcon:
         openPopup();
@@ -105,7 +105,7 @@ function onKeyPress(evt) {
     }
   }
 
-  if(evtKeyCode === 27 && focusedElement !== nameField) {
+  if (evtKeyCode === 27 && focusedElement !== nameField) {
     closePopup();
   }
 }
@@ -140,11 +140,6 @@ setupClose.addEventListener('click', onCloseClick);
 setupClose.addEventListener('keydown', onKeyPress);
 setupWizard.addEventListener('click', onColorChange);
 wizardFireball.addEventListener('click', onFireballChange);
-
-
-// if(focusedElement !== nameField) {
-  window.addEventListener('keydown', onKeyPress);
-//   console.log(focusedElement !== nameField);
-// }
+window.addEventListener('keydown', onKeyPress);
 
 /* module4-task1 */
