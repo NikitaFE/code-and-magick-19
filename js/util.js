@@ -6,7 +6,7 @@
 
   var getRandomItem = function (arr) {
     return arr[Math.floor(Math.random() * arr.length)];
-  }
+  };
 
   window.util = {
     ENTER_CODE: ENTER_CODE,
