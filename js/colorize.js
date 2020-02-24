@@ -1,12 +1,11 @@
 'use strict';
 
 (function () {
-  var setupPopup = window.setup.popup;
-  var setupWizard = setupPopup.querySelector('.setup-wizard');
+  var setupWizard = window.setup.popup.querySelector('.setup-wizard');
   var wizardCoat = setupWizard.querySelector('.wizard-coat');
   var wizardEyes = setupWizard.querySelector('.wizard-eyes');
-  var wizardFireball = setupPopup.querySelector('.setup-fireball-wrap');
-  var setupForm = setupPopup.querySelector('.setup-wizard-form');
+  var wizardFireball = window.setup.popup.querySelector('.setup-fireball-wrap');
+  var setupForm = window.setup.popup.querySelector('.setup-wizard-form');
   var coatInput = setupForm.elements['coat-color'];
   var eyesInput = setupForm.elements['eyes-color'];
   var fireballInput = setupForm.elements['fireball-color'];
